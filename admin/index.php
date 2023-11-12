@@ -72,6 +72,19 @@ if(isset($_GET['act'])){
         case 'addsp':
             include "sanpham/add.php";
             break; 
+        case 'xoasp':
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                delete_sanpham($_GET['id']);
+                }   
+                $listsanpham=loadall_sp();
+                include "sanpham/list.php";
+                break;  
+            break; 
+            case 'listsp':
+                $listsanpham=loadall_sp();
+                include "sanpham/list.php";
+                break;
+             
         default:
             include "home.php" ;
             break;    
