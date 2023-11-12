@@ -31,6 +31,11 @@ function loadall_sanpham($kyw, $iddm) {
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
+function loadall_sp(){
+    $sql= "SELECT * FROM sanpham order by id desc";
+    $listsanpham = pdo_query($sql);
+    return $listsanpham;
+}
 function loadone_sanpham($id){
     $sql = "SELECT * FROM sanpham where id=".$id;
             $sp=pdo_query_one($sql);
