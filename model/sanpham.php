@@ -19,20 +19,15 @@ function loadall_sanpham_top10() {
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
-function loadall_sanpham($kyw, $iddm) {
+function loadall_sanpham($kyw = "", $iddm = 0 ) {
     $sql = "SELECT * FROM sanpham WHERE 1 ";
-    if (!empty($kyw)) {
-        $sql .= "AND name LIKE '%" . $kyw . "%'";
+    if ($kyw != "") {
+        $sql .= "AND name LIKE '%$kyw%'";
     }
     if ($iddm > 0) {
-        $sql .= "AND iddm = '" . $iddm . "'";
+        $sql .= " AND iddm = $iddm"; 
     }
     $sql .= " ORDER BY id DESC";
-    $listsanpham = pdo_query($sql);
-    return $listsanpham;
-}
-function loadall_sp(){
-    $sql= "SELECT * FROM sanpham order by id desc";
     $listsanpham = pdo_query($sql);
     return $listsanpham;
 }
