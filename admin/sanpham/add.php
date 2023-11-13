@@ -42,7 +42,7 @@
                <textarea name="mota" id="" class="form-control" cols="30" rows="10"></textarea>
                 </div>
                 </div>
-                <div class=" mb">
+                <div class="mb">
                     <input type="submit" name="themmoi" value="Thêm mới">
                     <input type="reset" value="Nhập lại">
                 </div>
